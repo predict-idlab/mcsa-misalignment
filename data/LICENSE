@@ -1,0 +1,13 @@
+If you use this dataset please cite our paper, which can be found here: TODO input arXiv link
+
+Examining Motor Current Sensors of Low and High Quality: Ablation Study on Window Sizes with a Fault-Emulating Setup
+
+This dataset consists of motor current data obtained from an experiment setup made available by the University of Ghent. The setup can simulate bearing wear and tear created by various load conditions. The emulated faults are misalignment faults together with their severity. The misalignment can be emulated in both the vertical and horizontal direction. The severity of misalignment for both directions range from -0.5 mm to 0.5 mm with steps of 0.1 mm. Two signal sampling hardware tools are used: a low resolution current clamp and a high resolution current clamp. The low resolution current clamp is a Fluke i400s current clamp, while the high resolution current clamp is a Tektronix TCP-series current clamp with a complementary amplifier. 
+
+The data is formatted as follows:
+
+- Folder "raw": Raw data containing one second recordings (12800 samples) per configuration. A low and a high resolution current signal is provided at the same timestamps. Metadata such as misalignment, recording number, direction and speed (in rpm) is also given.
+- Folder "features": Feature folder containing the combined feature subset for each analysis window size. The selected features per feature subset (low resolution, high resolution, combined) is also provided under the "selected" subfolder.
+- Folder "models": Pickled CatBoost models for each analysis window size trained on the combined feature subset.
+- Folder "shap": Shap folder containing shap images extracted from the combined feature subset CatBoost model. 
+This dataset is licensed under CC BY-SA 4.0
